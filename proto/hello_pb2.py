@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='example',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11proto/hello.proto\x12\x07\x65xample\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2@\n\x04gRPC\x12\x38\n\x08SayHello\x12\x15.example.HelloRequest\x1a\x13.example.HelloReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x11proto/hello.proto\x12\x07\x65xample\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2F\n\nGrpcAction\x12\x38\n\x08SayHello\x12\x15.example.HelloRequest\x1a\x13.example.HelloReply\"\x00\x62\x06proto3')
 )
 
 
@@ -106,18 +106,18 @@ _sym_db.RegisterMessage(HelloReply)
 
 
 
-_GRPC = _descriptor.ServiceDescriptor(
-  name='gRPC',
-  full_name='example.gRPC',
+_GRPCACTION = _descriptor.ServiceDescriptor(
+  name='GrpcAction',
+  full_name='example.GrpcAction',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   serialized_start=91,
-  serialized_end=155,
+  serialized_end=161,
   methods=[
   _descriptor.MethodDescriptor(
     name='SayHello',
-    full_name='example.gRPC.SayHello',
+    full_name='example.GrpcAction.SayHello',
     index=0,
     containing_service=None,
     input_type=_HELLOREQUEST,
@@ -125,8 +125,8 @@ _GRPC = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_GRPC)
+_sym_db.RegisterServiceDescriptor(_GRPCACTION)
 
-DESCRIPTOR.services_by_name['gRPC'] = _GRPC
+DESCRIPTOR.services_by_name['GrpcAction'] = _GRPCACTION
 
 # @@protoc_insertion_point(module_scope)

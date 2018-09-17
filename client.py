@@ -11,7 +11,7 @@ _PORT = '8188'
 
 def run():
     channel = grpc.insecure_channel(_HOST + ':' + _PORT)
-    client = hello_pb2_grpc.gRPCStub(channel=channel)
+    client = hello_pb2_grpc.GrpcActionStub(channel=channel)
 
     name = '哈哈22sean哈哈'
     response = client.SayHello(hello_pb2.HelloRequest(name=name))

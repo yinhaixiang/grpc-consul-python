@@ -4,7 +4,7 @@ import grpc
 from proto import hello_pb2 as proto_dot_hello__pb2
 
 
-class gRPCStub(object):
+class GrpcActionStub(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -15,13 +15,13 @@ class gRPCStub(object):
       channel: A grpc.Channel.
     """
     self.SayHello = channel.unary_unary(
-        '/example.gRPC/SayHello',
+        '/example.GrpcAction/SayHello',
         request_serializer=proto_dot_hello__pb2.HelloRequest.SerializeToString,
         response_deserializer=proto_dot_hello__pb2.HelloReply.FromString,
         )
 
 
-class gRPCServicer(object):
+class GrpcActionServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -33,7 +33,7 @@ class gRPCServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_gRPCServicer_to_server(servicer, server):
+def add_GrpcActionServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'SayHello': grpc.unary_unary_rpc_method_handler(
           servicer.SayHello,
@@ -42,5 +42,5 @@ def add_gRPCServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'example.gRPC', rpc_method_handlers)
+      'example.GrpcAction', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

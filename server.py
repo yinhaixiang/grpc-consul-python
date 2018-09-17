@@ -10,7 +10,7 @@ _PORT = '8188'
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
-class gRPCServicerImpl(hello_pb2_grpc.gRPCServicer):
+class gRPCServicerImpl(hello_pb2_grpc.GrpcActionServicer):
 
     def SayHello(self, request, context):
         print("called with " + request.name)
@@ -19,7 +19,7 @@ class gRPCServicerImpl(hello_pb2_grpc.gRPCServicer):
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    hello_pb2_grpc.add_gRPCServicer_to_server(gRPCServicerImpl(), server)
+    hello_pb2_grpc.add_GrpcActionServicer_to_server(gRPCServicerImpl(), server)
     server.add_insecure_port('[::]:' + _PORT)
     server.start()
     print('server start success')
