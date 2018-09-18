@@ -22,7 +22,7 @@ def serve():
     hello_pb2_grpc.add_GrpcActionServicer_to_server(GrpcActionServicerImpl(), server)
     server.add_insecure_port('[::]:' + _PORT)
     server.start()
-    print('server start success')
+    print(f"{_PORT} server start success")
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
